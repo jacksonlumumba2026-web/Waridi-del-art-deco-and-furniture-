@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Waridi DelArt — Decor and Furniture
+   Waridi DelArt — Decor & Furniture
    ========================================================================== */
 
 :root {
@@ -608,7 +608,26 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .footer-inner { max-width: 640px; margin: 0 auto; }
 
-.footer-logo { max-width: 220px; margin: 0 auto 6px; filter: brightness(0) invert(1); opacity: 0.95; }
+.footer-mark { width: 72px; margin: 0 auto 14px; filter: brightness(0) invert(1); opacity: 0.95; }
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  margin: 0 0 2px;
+}
+.footer-brand-name em { font-style: normal; font-weight: 400; }
+
+.footer-brand-sub {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mustard);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
 
 .footer-tagline {
   font-family: var(--font-display);

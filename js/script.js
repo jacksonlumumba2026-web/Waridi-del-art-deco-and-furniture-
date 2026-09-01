@@ -94,7 +94,7 @@
     }
 
     setTimeout(function () {
-      setInterval(advance, 3200);
+      setInterval(advance, 4000);
     }, cardIndex * 450);
   });
 })();

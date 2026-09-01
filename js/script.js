@@ -61,4 +61,40 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && lightbox && !lightbox.hidden) closeLightbox();
   });
+
+  // Auto-sliding photos on each service card
+  var reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll(".service-photo").forEach(function (photo, cardIndex) {
+    var imgs = Array.prototype.slice.call(photo.querySelectorAll("img"));
+    if (imgs.length <= 1) return;
+
+    imgs[0].classList.add("is-active");
+
+    var dots = document.createElement("div");
+    dots.className = "service-dots";
+    imgs.forEach(function (_, i) {
+      var dot = document.createElement("span");
+      if (i === 0) dot.classList.add("is-active");
+      dots.appendChild(dot);
+    });
+    photo.appendChild(dots);
+
+    if (reduceMotion) return;
+
+    var index = 0;
+    function advance() {
+      imgs[index].classList.remove("is-active");
+      dots.children[index].classList.remove("is-active");
+      index = (index + 1) % imgs.length;
+      imgs[index].classList.add("is-active");
+      dots.children[index].classList.add("is-active");
+    }
+
+    setTimeout(function () {
+      setInterval(advance, 3200);
+    }, cardIndex * 450);
+  });
 })();

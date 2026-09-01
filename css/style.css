@@ -176,9 +176,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .brand-name em { font-style: normal; color: var(--charcoal); font-weight: 400; }
 
 .brand-sub {
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
   color: var(--mustard);
   font-weight: 600;
 }
@@ -621,9 +620,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer-brand-name em { font-style: normal; font-weight: 400; }
 
 .footer-brand-sub {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
   color: var(--mustard);
   font-weight: 600;
   margin: 0 0 16px;

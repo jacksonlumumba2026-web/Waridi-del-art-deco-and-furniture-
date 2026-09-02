@@ -17,7 +17,15 @@
 
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-preloading">
+
+<noscript><style>body{overflow:visible !important}</style></noscript>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <img src="assets/logo/waridi-mark.png" alt="" class="preloader-mark" width="72" height="44">
+  <p class="preloader-name">Waridi <em>DelArt</em></p>
+  <span class="preloader-rule"></span>
+</div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -68,7 +76,13 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="assets/images/hero-art-deco-armchair.jpg" alt="Reupholstered art deco armchair in a blue floral fabric, a Waridi DelArt upholstery project" loading="eager">
+        <div class="hero-slider">
+          <img src="assets/images/hero-art-deco-armchair.jpg" alt="Reupholstered art deco armchair in a blue floral fabric, a Waridi DelArt upholstery project" loading="eager">
+          <img src="assets/images/service-upholstery-9.jpg" alt="Elegant navy blue upholstered chaise lounge" loading="lazy">
+          <img src="assets/images/service-upholstery-10.jpg" alt="Blue upholstered wingback armchair" loading="lazy">
+          <img src="assets/images/service-hospitality-6.jpg" alt="Rooftop lounge seating with a hanging egg chair" loading="lazy">
+          <img src="assets/images/service-soft-furnishings-6.jpg" alt="Beige curtains and sheer drapes fitted in a living room" loading="lazy">
+        </div>
       </div>
     </div>
   </section>

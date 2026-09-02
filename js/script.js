@@ -5,6 +5,19 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Preloader cleanup: remove from the DOM and unlock scrolling once its
+  // hide animation finishes
+  var preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.addEventListener("animationend", function (e) {
+      if (e.target !== preloader) return;
+      preloader.remove();
+      document.body.classList.remove("is-preloading");
+    });
+  } else {
+    document.body.classList.remove("is-preloading");
+  }
+
   // Mobile nav toggle
   var navToggle = document.getElementById("navToggle");
   var siteNav = document.getElementById("siteNav");
@@ -67,7 +80,7 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll(".service-photo").forEach(function (photo, cardIndex) {
+  document.querySelectorAll(".service-photo, .hero-slider").forEach(function (photo, cardIndex) {
     var imgs = Array.prototype.slice.call(photo.querySelectorAll("img"));
     if (imgs.length <= 1) return;
 

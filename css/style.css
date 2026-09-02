@@ -413,6 +413,23 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .about { background: var(--white); }
 
+.about-callout {
+  background: var(--cream);
+  border: 1px solid var(--mustard);
+  border-radius: var(--radius);
+  padding: 20px 26px;
+  margin-top: 28px;
+  max-width: 640px;
+}
+.about-callout p { margin: 0; }
+.about-callout p:first-child { color: var(--charcoal); font-weight: 500; }
+.about-callout-tags {
+  margin-top: 8px !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--mustard-dark);
+}
+
 .vm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

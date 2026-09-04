@@ -679,10 +679,38 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--card-alt);
 }
 .service-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.service-photo img.is-active {
+  opacity: 1;
+}
+
+.service-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.service-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: oklch(0.94 0.01 85 / 45%);
+  box-shadow: 0 0 0 1px oklch(0 0 0 / 25%);
+  transition: background 0.3s ease;
+}
+.service-dots span.is-active {
+  background: var(--primary);
 }
 
 .service-icon {

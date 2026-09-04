@@ -80,7 +80,7 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll(".service-photo, .hero-slider").forEach(function (photo, cardIndex) {
+  document.querySelectorAll(".service-photo, .hero-photo").forEach(function (photo, cardIndex) {
     var imgs = Array.prototype.slice.call(photo.querySelectorAll("img"));
     if (imgs.length <= 1) return;
 
@@ -109,5 +109,32 @@
     setTimeout(function () {
       setInterval(advance, 4000);
     }, cardIndex * 450);
+  });
+
+  // Quote form: build a pre-filled WhatsApp message and open it in a new tab
+  document.querySelectorAll("[data-quote-form]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var name = form.elements.quoteName.value.trim();
+      if (!name) {
+        form.elements.quoteName.focus();
+        return;
+      }
+
+      var typeSelect = form.elements.quoteType;
+      var type = typeSelect.options[typeSelect.selectedIndex].text;
+      var details = form.elements.quoteDetails.value.trim() || "-";
+
+      var message =
+        "Hello Waridi DelArt Decor,\n\n" +
+        "My name is " + name + ".\n" +
+        "I need: " + type + ".\n" +
+        "Details: " + details + "\n\n" +
+        "Please send me a quote.";
+
+      var url = "https://wa.me/254722933637?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener");
+    });
   });
 })();

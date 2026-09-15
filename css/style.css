@@ -97,7 +97,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .preloader-mark {
   width: 64px;
-  filter: brightness(0) invert(1);
   opacity: 0;
   margin-bottom: 16px;
   animation: preloaderMarkIn 0.7s ease forwards;
@@ -279,7 +278,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 12px;
 }
 
-.brand-mark { width: 48px; height: auto; filter: brightness(0) invert(1); opacity: 0.95; }
+.brand-mark { width: 48px; height: auto; }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 
@@ -382,6 +381,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: 1.05fr 0.95fr;
   gap: 48px;
   align-items: start;
+}
+
+.hero-mark {
+  width: 56px;
+  height: auto;
+  margin-bottom: 18px;
 }
 
 .eyebrow {

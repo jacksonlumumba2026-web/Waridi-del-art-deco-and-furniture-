@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://warididelart.co.ke/sitemap.xml

@@ -84,7 +84,21 @@
     var imgs = Array.prototype.slice.call(photo.querySelectorAll("img"));
     if (imgs.length <= 1) return;
 
+    // Slide images beyond the first carry data-src instead of src, since they
+    // all share the same bounding box as the active slide — native
+    // loading="lazy" would otherwise fetch every slide at once as soon as the
+    // card enters view. Swap in the real src only as each slide is about to
+    // be needed, one slide ahead of the one currently showing.
+    function reveal(img) {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        delete img.dataset.src;
+      }
+    }
+
+    reveal(imgs[0]);
     imgs[0].classList.add("is-active");
+    reveal(imgs[1]);
 
     var dots = document.createElement("div");
     dots.className = "service-dots";
@@ -104,6 +118,7 @@
       index = (index + 1) % imgs.length;
       imgs[index].classList.add("is-active");
       dots.children[index].classList.add("is-active");
+      reveal(imgs[(index + 1) % imgs.length]);
     }
 
     setTimeout(function () {
